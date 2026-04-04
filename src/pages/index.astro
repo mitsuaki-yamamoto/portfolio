@@ -1,16 +1,151 @@
 ---
-
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/reset.css';
+import '../styles/global.css';
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mitsuaki Yamamoto — Markup Coder / Frontend Developer" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Top | Mitsuaki Yamamoto</title>
+</head>
+<body>
+  <div class="notebook-bg">
+    <Header />
+    <main class="main">
+      <section class="hero section">
+        <div class="container">
+          <p class="hero__role">— Markup Coder / Frontend Developer</p>
+          <h1 class="hero__name">Mitsuaki Yamamoto.</h1>
+          <p class="hero__name-jp">山本　光明　<a href="pages/about.html" class="hero__about-link">わたしについて →</a></p>
+          <div class="hero__catch">
+            <p class="hero__catch-main">
+              <span class="hero__catch-main__lg">想い</span><span class="hero__catch-main__sm">を</span><span class="hero__catch-main__kana"><span class="hero__catch-main__kana-dot" aria-hidden="true"></span><span class="hero__catch-main__lg">か</span></span><span class="hero__catch-main__kana"><span class="hero__catch-main__kana-dot" aria-hidden="true"></span><span class="hero__catch-main__lg">た</span></span><span class="hero__catch-main__kana"><span class="hero__catch-main__kana-dot" aria-hidden="true"></span><span class="hero__catch-main__lg">ち</span></span><span class="hero__catch-main__sm">に</span><span class="hero__catch-main__lg">！</span>
+            </p>
+            <p class="hero__catch-sub">あなたのイメージを、丁寧なコードで届けます。</p>
+          </div>
+          <div class="hero__links">
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://note.com/" target="_blank" rel="noopener noreferrer">Note</a>
+          </div>
+
+          <div class="hero__badge">
+            <span class="hero__portfolio-tag">PORTFOLIO</span>
+            <span class="hero__year">— 2026 —</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="works">
+        <div class="container">
+          <div class="works-header">
+            <h2 class="section-title">
+              <span class="section-title__regular">しごと</span>
+              <span class="section-title__small">の</span>
+              <span class="section-title__regular">記録</span>
+            </h2>
+            <div class="works-categories">
+              <a href="pages/works.html?filter=WordPress" class="works-category-link">WordPress</a>
+              <a href="pages/works.html?filter=Astro" class="works-category-link">Astro</a>
+              <a href="pages/works.html?filter=HTML/CSS" class="works-category-link">HTML / CSS</a>
+              <a href="pages/works.html?filter=JavaScript" class="works-category-link">JavaScript</a>
+            </div>
+          </div>
+          <div class="works-grid">
+            <div>
+              <a href="pages/work-corporate-website.html" class="work-card work-card--rotate-left">
+                <div class="work-card__tape" style="background-color: #7eb8da"></div>
+                <div class="work-card__image"><img src="images/works/corporate.svg" alt="Corporate Website" loading="lazy" /></div>
+                <div class="work-card__info">
+                  <h3 class="work-card__title">Corporate Website</h3>
+                  <div class="work-card__tags">
+                    <span class="tag tag--accent">NEW</span>
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">WordPress</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="work-card work-card--rotate-right">
+                <div class="work-card__tape" style="background-color: #e8c85a"></div>
+                <div class="work-card__image"><img src="images/works/landing.svg" alt="Landing Page" loading="lazy" /></div>
+                <div class="work-card__info">
+                  <h3 class="work-card__title">Landing Page</h3>
+                  <div class="work-card__tags">
+                    <span class="tag">Astro</span>
+                    <span class="tag">Animation</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="work-card work-card--rotate-slight">
+                <div class="work-card__tape" style="background-color: #a8d4a0"></div>
+                <div class="work-card__image"><img src="images/works/ec.svg" alt="EC Site" loading="lazy" /></div>
+                <div class="work-card__info">
+                  <h3 class="work-card__title">EC Site</h3>
+                  <div class="work-card__tags">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">JavaScript</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="work-card work-card--rotate-left">
+                <div class="work-card__tape" style="background-color: #c4a0d4"></div>
+                <div class="work-card__image"><img src="images/works/portfolio.svg" alt="Portfolio Renewal" loading="lazy" /></div>
+                <div class="work-card__info">
+                  <h3 class="work-card__title">Portfolio Renewal</h3>
+                  <div class="work-card__tags">
+                    <span class="tag">Astro</span>
+                    <span class="tag">Tailwind</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="work-card work-card--rotate-right">
+                <div class="work-card__tape" style="background-color: #d4a0a0"></div>
+                <div class="work-card__image"><img src="images/works/blog.svg" alt="Blog / Media" loading="lazy" /></div>
+                <div class="work-card__info">
+                  <h3 class="work-card__title">Blog / Media</h3>
+                  <div class="work-card__tags">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">PHP</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="work-card work-card--rotate-slight">
+                <div class="work-card__tape" style="background-color: #f0b87a"></div>
+                <div class="work-card__image"><img src="images/works/landing.svg" alt="LP Design" loading="lazy" /></div>
+                <div class="work-card__info">
+                  <h3 class="work-card__title">LP Design</h3>
+                  <div class="work-card__tags">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">Animation</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="works-more">
+            <a href="pages/works.html" class="more-link">全件を見る →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+
+  <!-- <script src="js/main.js"></script> -->
+</body>
 </html>
