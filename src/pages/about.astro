@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "About";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main class="main">
+    <section class="section" id="about">
+      <div class="container">
+        <h1 class="section-title">{pageTitle} <span class="sub">— 自己紹介</span></h1>
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-card__label">Profile</div>
+            <h2 class="about-card__name">山本 光明</h2>
+            <p class="about-card__name-en">Mitsuaki Yamamoto</p>
+            <p class="about-card__role">Markup Coder / Frontend Developer</p>
+          </div>
+          <div class="about-text">
+            <p>マークアップコーダーとして、丁寧にデザインを実装することを大切にしています。</p>
+            <p>HTML/CSSを中心に、WordPressサイトの構築やランディングページの制作を行ってきました。コーディングの正確さだけでなく、デザインの意図を汲み取り、ユーザーにとって使いやすいWebサイトを作ることを心がけています。</p>
+            <p>現在はAstroを学びながら、アニメーションやインタラクションを活かした より表現豊かなWebサイト制作に挑戦しています。</p>
+          </div>
+          <div>
+            <h3 class="about-skills__title">Skills</h3>
+            <div class="about-skills__grid">
+              <div class="skill-group">
+                <h4 class="skill-group__label">Markup & Style</h4>
+                <ul class="skill-group__list">
+                  <li>HTML5</li>
+                  <li>CSS3 / Sass</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h4 class="skill-group__label">CMS & Framework</h4>
+                <ul class="skill-group__list">
+                  <li>WordPress</li>
+                  <li>Astro</li>
+                  <li>カラーミー</li>
+                  <li>Shopify</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h4 class="skill-group__label">Tools</h4>
+                <ul class="skill-group__list"><li>Git / GitHub</li><li>Figma</li><li>VS Code</li></ul>
+              </div>
+              <div class="skill-group">
+                <h4 class="skill-group__label">etc</h4>
+                <ul class="skill-group__list">
+                  <li>サイトデザイン制作</li>
+                  <li>バナー制作</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
