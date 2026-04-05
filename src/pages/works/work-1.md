@@ -5,11 +5,13 @@ description: '美容サロンのコーポレートサイトをWordPressで構築
 image:
     url: '/images/works/work-1.webp'
     alt: 'サイトのFV'
-tags: ["WordPress", "Astro", "Desgin"]
+tags: ["WordPress"]
 siteUrl: 'https://eyebrow.b-merrows.com/'      
 date: '2025年4月'  
 client: 'メロウボーテ' 
 ---
+
+## プロジェクト概要
           
 ### 担当範囲
 
