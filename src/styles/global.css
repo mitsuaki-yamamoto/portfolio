@@ -763,7 +763,7 @@ ul {
 
 .filter-btn {
   background: none;
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-line-2);
   padding: 6px 16px;
   font-size: 0.8rem;
   font-family: var(--font-body);

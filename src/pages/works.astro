@@ -1,117 +1,67 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Mitsuaki Yamamoto.";
+
+const allWorks = Object.values(import.meta.glob('./works/*.md', { eager: true })) as any[];
+const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.tags))];
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle}> 
   <main class="main">
     <section class="section">
       <div class="container">
         <h1 class="section-title">Works <span class="sub">— 実績一覧</span></h1>
         <div class="works-filter">
-          <button class="filter-btn is-active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="HTML/CSS">HTML/CSS</button>
-          <button class="filter-btn" data-filter="WordPress">WordPress</button>
-          <button class="filter-btn" data-filter="Astro">Astro</button>
-          <button class="filter-btn" data-filter="Animation">Animation</button>
-          <button class="filter-btn" data-filter="JavaScript">JavaScript</button
-          >
-          <button class="filter-btn" data-filter="PHP">PHP</button>
-          <button class="filter-btn" data-filter="Tailwind">Tailwind</button>
+            {uniqueTags.map((tag: string) => (
+              <button class="filter-btn" data-filter={tag}>{tag}</button>
+            ))}
         </div>
 
         <div class="works-grid">
-          <div class="works-grid__item" data-tags="HTML/CSS,WordPress">
-            <a href="/works/work-1" class="work-card work-card--rotate-left">
-              <div class="work-card__tape" style="background-color: #7eb8da">
-              </div>
-              <div class="work-card__image">
-                <img
-                  src="/images/common/sample.svg"
-                  alt="Corporate Website"
-                  loading="lazy"
-                />
-              </div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">Corporate Website</h3>
-                <div class="work-card__tags">
-                  <span class="tag tag--accent">NEW</span><span class="tag"
-                    >HTML/CSS</span
-                  ><span class="tag">WordPress</span>
+           {allWorks.map((work: any) => (
+            <div class="works-grid__item" data-tags={work.frontmatter.tags.join(',')}>
+              <a href={work.url} class="work-card" data-tags={work.frontmatter.tags.join(',')}>
+                <div class="work-card__image">
+                  <img src={work.frontmatter.image.url} alt={work.frontmatter.image.alt} loading="lazy" />
                 </div>
-              </div>
-            </a>
-          </div>
-          <!-- <div class="works-grid__item" data-tags="Astro,Animation">
-            <a href="#" class="work-card work-card--rotate-right">
-              <div class="work-card__tape" style="background-color: #e8c85a"></div>
-              <div class="work-card__image"><img src="../images/works/landing.svg" alt="Landing Page" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">Landing Page</h3>
-                <div class="work-card__tags"><span class="tag">Astro</span><span class="tag">Animation</span></div>
-              </div>
-            </a>
-          </div>
-          <div class="works-grid__item" data-tags="HTML/CSS,JavaScript">
-            <a href="#" class="work-card work-card--rotate-slight">
-              <div class="work-card__tape" style="background-color: #a8d4a0"></div>
-              <div class="work-card__image"><img src="../images/works/ec.svg" alt="EC Site" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">EC Site</h3>
-                <div class="work-card__tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span></div>
-              </div>
-            </a>
-          </div>
-          <div class="works-grid__item" data-tags="Astro,Tailwind">
-            <a href="#" class="work-card work-card--rotate-left">
-              <div class="work-card__tape" style="background-color: #c4a0d4"></div>
-              <div class="work-card__image"><img src="../images/works/portfolio.svg" alt="Portfolio Renewal" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">Portfolio Renewal</h3>
-                <div class="work-card__tags"><span class="tag">Astro</span><span class="tag">Tailwind</span></div>
-              </div>
-            </a>
-          </div>
-          <div class="works-grid__item" data-tags="WordPress,PHP">
-            <a href="#" class="work-card work-card--rotate-right">
-              <div class="work-card__tape" style="background-color: #d4a0a0"></div>
-              <div class="work-card__image"><img src="../images/works/blog.svg" alt="Blog / Media" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">Blog / Media</h3>
-                <div class="work-card__tags"><span class="tag">WordPress</span><span class="tag">PHP</span></div>
-              </div>
-            </a>
-          </div> -->
+                <div class="work-card__info">
+                  <h3 class="work-card__title">{work.frontmatter.title}</h3>
+                  <div class="work-card__tags">
+                    {work.frontmatter.tags.map((tag: string) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   </main>
   <script>
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    const items = document.querySelectorAll(
-      ".works-grid__item",
-    ) as NodeListOf<HTMLElement>;
-    function applyFilter(filter: string) {
-      filterBtns.forEach((b) => b.classList.remove("is-active"));
-      const activeBtn = document.querySelector(
-        `.filter-btn[data-filter="${filter}"]`,
-      );
-      if (activeBtn) activeBtn.classList.add("is-active");
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.works-grid__item');
+    
+    function applyFilter(filter) {
+      filterBtns.forEach((b) => b.classList.remove('is-active'));
+      const activeBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+      if (activeBtn) activeBtn.classList.add('is-active');
       items.forEach((item) => {
-        const tags = item.getAttribute("data-tags") || "";
-        item.style.display =
-          filter === "all" || tags.includes(filter) ? "" : "none";
+        const tags = item.getAttribute('data-tags') || '';
+        item.style.display = (filter === 'all' || tags.includes(filter)) ? '' : 'none';
       });
     }
 
     filterBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        applyFilter(btn.getAttribute("data-filter") || "all");
+      btn.addEventListener('click', () => {
+        applyFilter(btn.getAttribute('data-filter'));
       });
     });
 
     const params = new URLSearchParams(window.location.search);
-    const initialFilter = params.get("filter");
-    applyFilter(initialFilter || "all");
+    const initialFilter = params.get('filter');
+    applyFilter(initialFilter || 'all');
   </script>
 </BaseLayout>
+

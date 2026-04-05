@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Mitsuaki Yamamoto.";
+
+const allWorks = Object.values(import.meta.glob('./works/*.md', { eager: true })) as any[];
+const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.tags))];
 ---
 
 
@@ -38,97 +41,33 @@ const pageTitle = "Mitsuaki Yamamoto.";
             <span class="section-title__regular">記録</span>
           </h2>
           <div class="works-categories">
-            <a href="/works" class="works-category-link">WordPress</a>
-            <a href="/works/astro" class="works-category-link">Astro</a>
-            <a href="/works/html-css" class="works-category-link">HTML / CSS</a>
-            <a href="/works/design" class="works-category-link">Design</a>
+            <a href="/works" class="works-category-link">All</a>
+            {uniqueTags.map((tag: string) => (
+              <a href={`/works?filter=${tag}`} class="works-category-link">{tag}</a>
+            ))}
           </div>
         </div>
+
+
         <div class="works-grid">
+          {allWorks.map((work: any) => (
           <div>
-            <a href="/works/work-1" class="work-card work-card--rotate-left">
+            <a href={work.url} class="work-card work-card--rotate-left">
               <div class="work-card__tape" style="background-color: #7eb8da"></div>
               <div class="work-card__image">
-                <img src="/images/common/sample.svg" alt="Corporate Website" loading="lazy" />
+                <img src={work.frontmatter.image.url} alt={work.frontmatter.image.alt} loading="lazy" />
               </div>
               <div class="work-card__info">
-                <h3 class="work-card__title">実績作品1</h3>
+                <h3 class="work-card__title">{work.frontmatter.title}</h3>
                 <div class="work-card__tags">
-                  <span class="tag tag--accent">NEW</span>
-                  <span class="tag">HTML/CSS</span>
-                  <span class="tag">WordPress</span>
+                  {work.frontmatter.tags.map((tag: string) => (
+                    <span class="tag">{tag}</span>
+                  ))}
                 </div>
               </div>
             </a>
           </div>
-          <!-- <div>
-            <a href="#" class="work-card work-card--rotate-right">
-              <div class="work-card__tape" style="background-color: #e8c85a"></div>
-              <div class="work-card__image"><img src="images/works/landing.svg" alt="Landing Page" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">Landing Page</h3>
-                <div class="work-card__tags">
-                  <span class="tag">Astro</span>
-                  <span class="tag">Animation</span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="work-card work-card--rotate-slight">
-              <div class="work-card__tape" style="background-color: #a8d4a0"></div>
-              <div class="work-card__image"><img src="images/works/ec.svg" alt="EC Site" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">EC Site</h3>
-                <div class="work-card__tags">
-                  <span class="tag">HTML/CSS</span>
-                  <span class="tag">JavaScript</span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="work-card work-card--rotate-left">
-              <div class="work-card__tape" style="background-color: #c4a0d4"></div>
-              <div class="work-card__image"><img src="images/works/portfolio.svg" alt="Portfolio Renewal" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">Portfolio Renewal</h3>
-                <div class="work-card__tags">
-                  <span class="tag">Astro</span>
-                  <span class="tag">Tailwind</span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="work-card work-card--rotate-right">
-              <div class="work-card__tape" style="background-color: #d4a0a0"></div>
-              <div class="work-card__image"><img src="images/works/blog.svg" alt="Blog / Media" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">Blog / Media</h3>
-                <div class="work-card__tags">
-                  <span class="tag">WordPress</span>
-                  <span class="tag">PHP</span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="work-card work-card--rotate-slight">
-              <div class="work-card__tape" style="background-color: #f0b87a"></div>
-              <div class="work-card__image"><img src="images/works/landing.svg" alt="LP Design" loading="lazy" /></div>
-              <div class="work-card__info">
-                <h3 class="work-card__title">LP Design</h3>
-                <div class="work-card__tags">
-                  <span class="tag">HTML/CSS</span>
-                  <span class="tag">Animation</span>
-                </div>
-              </div>
-            </a>
-          </div> -->
-        </div>
-        <div class="works-more">
-          <a href="/works" class="more-link">全件を見る →</a>
+           ))}
         </div>
       </div>
     </section>
