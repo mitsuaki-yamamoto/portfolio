@@ -6,7 +6,7 @@ image:
     url: '/images/works/merrows.webp'
     alt: 'サイトのFV'
 tags: ["WordPress"]
-siteUrl: 'https://eyebrow.b-merrows.com/'      
+siteUrl: 'https://b-merrows.com/'      
 date: '2025年4月'  
 client: 'メロウボーテ' 
 ---

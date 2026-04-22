@@ -11,6 +11,7 @@ const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.
       <div class="container">
         <h1 class="section-title">Works <span class="sub">— 実績一覧</span></h1>
         <div class="works-filter">
+          <a href="/works" class="filter-btn is-active">All</a>
             {uniqueTags.map((tag: string) => (
               <button class="filter-btn" data-filter={tag}>{tag}</button>
             ))}

@@ -20,8 +20,8 @@ const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.
           <p class="hero__catch-sub">あなたのイメージを、丁寧なコードで届けます。</p>
         </div>
         <div class="hero__links">
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://x.com/mitsuaki903" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="https://github.com/mitsuaki-yamamoto/" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://note.com/" target="_blank" rel="noopener noreferrer">Note</a>
         </div>
 
@@ -46,13 +46,11 @@ const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.
             ))}
           </div>
         </div>
-
-
         <div class="works-grid">
           {allWorks.map((work: any) => (
           <div>
             <a href={work.url} class="work-card work-card--rotate-left">
-              <div class="work-card__tape" style="background-color: #7eb8da"></div>
+              <div class="work-card__tape"></div>
               <div class="work-card__image">
                 <img src={work.frontmatter.image.url} alt={work.frontmatter.image.alt} loading="lazy" />
               </div>
