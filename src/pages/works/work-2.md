@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: '株式会社ジョイントマッチ'
 description: '企業向けコーポレートサイトの構築。お知らせ機能・問い合わせフォームの作成'
 image:
-    url: '/images/works/work-2.webp'
+    url: '/images/works/jointmatch.webp'
     alt: 'サイトのFV'
 tags: [ "WordPress", "デザイン"]
 siteUrl: 'https://jointmatch.co.jp/'      
@@ -12,6 +12,8 @@ client: '株式会社ジョイントマッチ'
 ---
 
 ## プロジェクト概要
+
+制作期間：１ヶ月~1ヶ月半（デザイン＆コーディング）
 
 ### お客様のご要望
 

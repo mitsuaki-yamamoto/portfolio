@@ -27,21 +27,24 @@
   --section-gap: calc(100 / 16 * 1em);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 html {
   scroll-behavior: smooth;
 }
 
+/* ✅ サイト固有なので global.css に残す */
+img {
+  height: auto; /* reset.css にない、サイト固有の指定 */
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3; /* サイト固有 */
+}
+
 body {
   font-family: var(--font-body);
-  font-weight: 400;
   color: var(--color-text);
   background-color: var(--color-bg);
   line-height: 1.8;
@@ -61,18 +64,6 @@ a {
 
 a:hover {
   color: var(--color-accent-hover);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.3;
 }
 
 ul {

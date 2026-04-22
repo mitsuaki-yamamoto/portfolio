@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: 'メロウボーテ'
 description: '美容サロンのコーポレートサイトをWordPressで構築。レスポンシブ対応、お知らせ機能、お問い合わせフォームなどを実装しました。'
 image:
-    url: '/images/works/work-1.webp'
+    url: '/images/works/merrows.webp'
     alt: 'サイトのFV'
 tags: ["WordPress"]
 siteUrl: 'https://eyebrow.b-merrows.com/'      
@@ -12,6 +12,8 @@ client: 'メロウボーテ'
 ---
 
 ## プロジェクト概要
+
+制作期間：7日~11日（コーディング）
           
 ### 担当範囲
 

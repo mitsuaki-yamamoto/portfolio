@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Mitsuaki Yamamoto.";
-
 const allWorks = Object.values(import.meta.glob('./works/*.md', { eager: true })) as any[];
 const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.tags))];
 ---

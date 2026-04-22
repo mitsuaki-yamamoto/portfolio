@@ -41,9 +41,8 @@ const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.
   </main>
   <script>
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.works-grid__item');
-    
-    function applyFilter(filter) {
+    const items = document.querySelectorAll<HTMLElement>('.works-grid__item');
+    function applyFilter(filter : string) {
       filterBtns.forEach((b) => b.classList.remove('is-active'));
       const activeBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
       if (activeBtn) activeBtn.classList.add('is-active');
@@ -55,7 +54,7 @@ const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.
 
     filterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        applyFilter(btn.getAttribute('data-filter'));
+        applyFilter(btn.getAttribute('data-filter') as string);
       });
     });
 

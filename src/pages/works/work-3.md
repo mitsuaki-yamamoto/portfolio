@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: '株式会社清和'
 description: 'シンプルな企業向けコーポレートサイトの構築。会社名・地域名で検索順位1-3位以内に表示されるようにしてほしいとのご要望をうけたサイトです。'
 image:
-    url: '/images/works/work-3.webp'
+    url: '/images/works/seiwa.webp'
     alt: 'サイトのFV'
 tags: [ "デザイン", "テーマ"]
 siteUrl: 'https://www.seiwa-miyakojima.com/'      
@@ -12,6 +12,8 @@ client: '株式会社清和'
 ---
 
 ## プロジェクト概要
+
+制作期間：14日~21日間 (デザイン&コーディング)
 
 ### お客様のご要望
 

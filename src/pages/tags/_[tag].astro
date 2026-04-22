@@ -20,7 +20,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={ `${tag}タグの作品名`}>
   <main class="main">
     <section class="section">
       <div class="container">
