@@ -1,8 +1,6 @@
 ---
-const currentPath = Astro.url.pathname;
-
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---  
-   
    
 <nav class="nav" aria-label="メインナビゲーション">
   <ul class="nav__list">
