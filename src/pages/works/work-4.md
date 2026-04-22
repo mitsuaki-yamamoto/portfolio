@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: '弁護士法人アジア総合法律事務所'
-description: '本サイトはブロックエディターをカスタマイズしております。見出しブロックや引用ブロックなど自作のブロックをブロックエディターで使用できる様にカスタマイズしております。'
+title: 'shizumari'
+description: '本サイトはブロックエディターをカスタマイズしております。ギャラリーブロック　→ スライダーで表示されるようにカスタマイズされております。'
 image:
-    url: '/images/works/ajia-low.webp'
+    url: '/images/works/shizumari.webp'
     alt: 'サイトのFV'
 tags: ["WordPress"]
-siteUrl: 'https://fukuoka-koutsujiko.com/'      
+siteUrl: 'https://www.shizumari.com/'      
 date: '2025年4月'  
-client: '弁護士法人アジア総合法律事務所' 
+client: 'shizumari' 
 ---
 
 ## プロジェクト概要

@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: '株式会社ジョイントマッチ'
+title: '(株)ジョイントマッチ'
 description: '企業向けコーポレートサイトの構築。お知らせ機能・問い合わせフォームの作成'
 image:
     url: '/images/works/jointmatch.webp'
@@ -8,7 +8,7 @@ image:
 tags: [ "WordPress", "デザイン"]
 siteUrl: 'https://jointmatch.co.jp/'      
 date: '2025年4月'  
-client: '株式会社ジョイントマッチ' 
+client: '(株)ジョイントマッチ' 
 ---
 
 ## プロジェクト概要

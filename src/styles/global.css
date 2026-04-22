@@ -106,7 +106,7 @@ ul {
       rgba(90, 50, 25, 0.65) 10px
     );
   background-color: rgba(70, 35, 18, 0.75);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
   z-index: 1;
   pointer-events: none;
 }
@@ -176,8 +176,9 @@ ul {
 
 .works-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px ;
+  /* grid-template-columns: 1fr; */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 7px;
   align-items: start;
 }
 
@@ -199,7 +200,7 @@ ul {
 }
 
 .works-grid > div:nth-child(6){
-  --_bg-color: #da7e7e;
+  --_bg-color: #7e8dda;
 }
 
 .work-card {
@@ -242,6 +243,7 @@ ul {
   aspect-ratio: 5 / 3;
   overflow: hidden;
   margin-bottom: 12px;
+
 }
 
 .work-card__image img {
@@ -257,7 +259,7 @@ ul {
 
 .work-card__title {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   margin-bottom: 8px;
   line-height: 1.4;
@@ -316,8 +318,8 @@ ul {
 
 .tag {
   display: inline-block;
-  font-size: 0.7rem;
-  padding: 2px 10px;
+  font-size: 0.65rem;
+  padding: 1px .6em;
   border: 1px solid var(--color-line);
   border-radius: 2px;
   color: var(--color-tag-text);
@@ -530,7 +532,6 @@ ul {
 /* タブレット幅〜: ルーズリーフ帯表示・2カラムなど */
 @media (min-width: 481px) {
   .works-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 40px 20px;
   }
 

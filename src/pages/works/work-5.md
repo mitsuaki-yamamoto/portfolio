@@ -1,31 +1,28 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'shizumari'
-description: '本サイトはブロックエディターをカスタマイズしております。ギャラリーブロック　→ スライダーで表示されるようにカスタマイズされております。'
+title: '(株)エルコム'
+description: '本サイトはリニューアル案件になります。カスタム投稿による物件登録と管理を実装しました。'
 image:
-    url: '/images/works/shizumari.webp'
+    url: '/images/works/elcom.webp'
     alt: 'サイトのFV'
-tags: ["WordPress"]
-siteUrl: 'https://www.shizumari.com/'      
+tags: [ "wordpress"]
+siteUrl: 'https://elcom-e.com/'      
 date: '2025年4月'  
-client: 'ポートフォリオサイト' 
+client: '(株)清和' 
 ---
 
 ## プロジェクト概要
 
-制作期間：約10日~14日
+制作期間：14日~21日間 
+
           
 ### 担当範囲
 
-- デザインカンプからマークアップ
-- レスポンシブ対応
-- お問い合わせフォーム実装
-- WordPress構築
+- デザインカンプからのコーディング
 
-※デザイン・ディレクションはパートナー会社が担当
+※デザインはパートナー会社が作成
 
 
 ### 使用技術
 
-- HTML / CSS / JavaScript
 - WordPress
