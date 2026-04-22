@@ -72,3 +72,171 @@ const uniqueTags = [...new Set(allWorks.flatMap((work: any) => work.frontmatter.
     </section>
   </main>
 </BaseLayout>
+
+
+<style>
+  /* ========================================
+   Hero
+   ======================================== */
+
+.hero__role {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.hero__name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.hero__name-jp {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin-bottom: calc(var(--grid-size) * 2.4);
+  letter-spacing: 0.3em;
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero__about-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+  border-bottom: 1px solid var(--color-line-2);
+  padding-bottom: 1px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.hero__about-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.hero__tagline {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--color-line-2);
+  font-style: italic;
+  margin-bottom: calc(var(--grid-size) * 1.5);
+  letter-spacing: 0.05em;
+}
+
+.hero__catch {
+  margin: 0;
+}
+
+.hero__catch-main {
+  font-family: var(--font-mincho);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.35;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0;
+}
+
+.hero__catch-main__lg {
+  font-size: 1em;
+  letter-spacing: inherit;
+}
+
+/* 「かたち」各文字：ラッパー＋absolute で黒丸 */
+.hero__catch-main__kana {
+  position: relative;
+  display: inline-block;
+}
+
+.hero__catch-main__kana-dot {
+  position: absolute;
+  left: 50%;
+  top: -0.32em;
+  transform: translateX(-50%);
+  width: 0.19em;
+  height: 0.19em;
+  border-radius: 50%;
+  background-color: var(--color-text);
+  pointer-events: none;
+}
+
+.hero__catch-main__sm {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.hero__catch-sub {
+  font-family: var(--font-mincho);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  margin: 10px 0 0;
+  line-height: 1.7;
+}
+
+.hero__links {
+  display: flex;
+  gap: 24px;
+  margin-top: calc(var(--grid-size) * 1.5);
+  margin-bottom: 8px;
+}
+
+.hero__links a {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.hero__links a:hover {
+  color: var(--color-accent);
+}
+
+
+.hero__badge {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: flex-end;
+  margin-top: var(--grid-size);
+}
+
+.hero__portfolio-tag {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 4px 14px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.hero__year {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+@media screen and (min-width: 768px)() {
+    .hero__catch-main {
+    font-size: 2.2rem;
+  }
+
+  .hero__catch-sub {
+    font-size: 1.05rem;
+    margin-top: 12px;
+  }
+}
+</style>

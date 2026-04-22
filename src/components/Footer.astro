@@ -6,3 +6,33 @@
     </div>
   </div>
 </footer>
+
+<style>
+/* ========================================
+  Footer
+  ======================================== */
+
+.footer {
+  padding: calc(var(--grid-size) * 2) 0;
+  padding-bottom: calc(var(--grid-size) * 5);
+  border-top: 1px solid var(--color-line);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-bottom: calc(var(--grid-size) * 3);
+  }
+}
+
+</style>

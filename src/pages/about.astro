@@ -57,3 +57,95 @@ const pageTitle = "About";
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  /* ========================================
+   About Page
+======================================== */
+
+.about-card {
+  background-color: var(--color-bg-paper);
+  border: 1px solid var(--color-line);
+  padding: calc(var(--grid-size) * 2);
+  position: relative;
+  margin-bottom: calc(var(--grid-size) * 3);
+}
+
+.about-card__label {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: var(--color-bg-paper);
+  padding: 0 10px;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.1em;
+}
+
+.about-card__name {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.about-card__name-en {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 8px;
+}
+
+.about-card__role {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.about-text {
+  margin-bottom: calc(var(--grid-size) * 3);
+  line-height: 2.2;
+}
+
+.about-text p {
+  margin-bottom: 1.2em;
+}
+
+.about-skills__title {
+  font-size: 1.8rem;
+  margin-bottom: calc(var(--grid-size) * 1.5);
+}
+
+.about-skills__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--grid-size) * 2);
+}
+
+.skill-group__label {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.skill-group__list {
+  font-size: 0.9rem;
+  line-height: 2;
+  color: var(--color-text-light);
+}
+
+.skill-group__list li::before {
+  content: '— ';
+  color: var(--color-line-accent);
+}
+
+@media (min-width: 481px) {
+
+  .about-skills__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+</style>
